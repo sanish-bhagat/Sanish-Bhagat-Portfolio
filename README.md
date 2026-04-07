@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sanish Bhagat Portfolio
 
 This is now a plain static website built with only:
@@ -18,3 +19,6 @@ python -m http.server 5500
 ```
 
 Then open `http://localhost:5500`.
+=======
+### Welcome
+>>>>>>> 0bb659955ec83622727485c3b230c1c059da87ca
