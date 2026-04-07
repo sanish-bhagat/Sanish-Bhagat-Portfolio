@@ -102,14 +102,68 @@ document.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',(
 
 // FORM
 const form=document.getElementById('contactForm');
+const EMAILJS_CONFIG={
+  serviceId:'service_ebw3ix7',
+  templateId:'template_6uslnwq',
+  publicKey:'F7-jL5eKVsrNY9lZT',
+};
 function val(id,chk){const e=document.getElementById(id),err=document.getElementById(id+'-error'),ok=chk(e.value.trim());e.classList.toggle('error',!ok);e.classList.toggle('success',ok);err.classList.toggle('visible',!ok);return ok;}
-form.addEventListener('submit',e=>{
+form.addEventListener('submit',async e=>{
   e.preventDefault();
   const ok=val('fname',v=>v.length>0)&val('lname',v=>v.length>0)&val('email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v))&val('subject',v=>v.length>0)&val('message',v=>v.length>=20);
   if(!ok)return;
+  const fname=document.getElementById('fname').value.trim();
+  const lname=document.getElementById('lname').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const subject=document.getElementById('subject').value.trim();
+  const message=document.getElementById('message').value.trim();
+
   const b=document.getElementById('submitBtn'),bt=document.getElementById('btn-text');
-  b.disabled=true;bt.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> &nbsp;Sending...';
-  setTimeout(()=>{b.disabled=false;bt.innerHTML='<i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message';document.getElementById('successMsg').classList.add('visible');form.reset();form.querySelectorAll('.form-input,.form-textarea').forEach(el=>el.classList.remove('success','error'));setTimeout(()=>document.getElementById('successMsg').classList.remove('visible'),5500);},1800);
+  b.disabled=true;
+  bt.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> &nbsp;Sending...';
+  const successEl=document.getElementById('successMsg');
+
+  try{
+    const cfgReady=Object.values(EMAILJS_CONFIG).every(v=>v&&!v.startsWith('YOUR_EMAILJS_'));
+    if(!cfgReady)throw new Error('emailjs_not_configured');
+
+    const payload={
+      service_id:EMAILJS_CONFIG.serviceId,
+      template_id:EMAILJS_CONFIG.templateId,
+      user_id:EMAILJS_CONFIG.publicKey,
+      template_params:{
+        from_name:`${fname} ${lname}`,
+        from_email:email,
+        subject,
+        message,
+        to_name:'Sanish Bhagat',
+        reply_to:email,
+      },
+    };
+
+    const res=await fetch('https://api.emailjs.com/api/v1.0/email/send',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(payload),
+    });
+    if(!res.ok)throw new Error('email_send_failed');
+
+    successEl.innerHTML='<i class="fa-solid fa-circle-check"></i> Message sent successfully. I will reply soon.';
+    successEl.classList.add('visible');
+    form.reset();
+    form.querySelectorAll('.form-input,.form-textarea').forEach(el=>el.classList.remove('success','error'));
+  }catch(err){
+    const to='sanishbhagat3@gmail.com';
+    const mailSubject=`Portfolio Contact: ${subject}`;
+    const mailBody=`Name: ${fname} ${lname}\nEmail: ${email}\n\nMessage:\n${message}`;
+    window.location.href=`mailto:${to}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    successEl.innerHTML='<i class="fa-solid fa-circle-check"></i> Mail app opened as fallback. Configure EmailJS keys in src/script.js for direct send.';
+    successEl.classList.add('visible');
+  }finally{
+    b.disabled=false;
+    bt.innerHTML='<i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message';
+    setTimeout(()=>successEl.classList.remove('visible'),5500);
+  }
 });
 ['fname','lname','subject'].forEach(id=>document.getElementById(id).addEventListener('blur',()=>val(id,v=>v.length>0)));
 document.getElementById('email').addEventListener('blur',()=>val('email',v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)));
