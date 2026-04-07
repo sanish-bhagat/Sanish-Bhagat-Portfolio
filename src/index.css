@@ -234,6 +234,10 @@ section{padding:7rem 2.5rem;}
 .filter-btn{padding:6px 16px;border-radius:100px;font-size:.78rem;font-weight:700;letter-spacing:.04em;border:1px solid var(--border);color:var(--text2);background:var(--surface);transition:var(--trans);}
 .filter-btn.active,.filter-btn:hover{background:var(--accent);color:#050810;border-color:transparent;}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.8rem;}
+
+@media (min-width: 992px){
+  .projects-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
 .project-card{background:var(--surface);border:1.5px solid var(--card-border);border-radius:var(--radius-lg);overflow:hidden;transition:var(--trans);display:flex;flex-direction:column;backdrop-filter:blur(10px);}
 .project-card:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 20px var(--accent-glow);border-color:var(--accent);}
 .project-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;}

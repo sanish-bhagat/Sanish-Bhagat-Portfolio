@@ -1,20 +1,20 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Sanish Bhagat Portfolio
 
-# Run and deploy your AI Studio app
+This is now a plain static website built with only:
 
-This contains everything you need to run your app locally.
+- HTML
+- CSS
+- JavaScript
 
-View your app in AI Studio: https://ai.studio/apps/0d1d3567-52ce-43b8-b9ad-f0b9e4f6da01
+## Run locally (no Vite, no build step)
 
-## Run Locally
+1. Open `index.html` directly in your browser, or
+2. Serve the folder with any static server.
 
-**Prerequisites:**  Node.js
+Example (Python):
 
+```bash
+python -m http.server 5500
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Then open `http://localhost:5500`.
