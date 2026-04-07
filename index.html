@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanish Bhagat — AI/ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <!-- LOADER -->
+    <div id="loader">
+      <div class="loader-mono">SB</div>
+      <div class="loader-sub">Loading Portfolio</div>
+      <div class="loader-track"><div class="loader-fill"></div></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">Sanish.</a>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certs</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+          <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="mob-link">About</a>
+      <a href="#skills" class="mob-link">Skills</a>
+      <a href="#projects" class="mob-link">Projects</a>
+      <a href="#experience" class="mob-link">Education</a>
+      <a href="#certifications" class="mob-link">Certs</a>
+      <a href="#contact" class="mob-link">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+        <canvas id="particles"></canvas>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="dot"></span>Open to Opportunities</div>
+          <h1 class="hero-title">
+            <span class="line"><span>SANISH</span></span>
+            <span class="line"><span class="crystal">BHAGAT</span></span>
+          </h1>
+          <div class="hero-typed-wrap">
+            <span class="typed-prefix">&gt;&nbsp;</span>
+            <span class="typed-text" id="typed-text"></span>
+            <span class="typed-cursor"></span>
+          </div>
+          <p class="hero-desc">AI/ML Engineer specializing in <strong style="color:var(--accent)">Generative AI</strong>, multimodal systems &amp; RAG-based LLM pipelines. Building production-ready AI products that solve real-world healthcare and agricultural challenges.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Hire Me</a>
+            <a href="#projects" class="btn btn-outline"><i class="fa-regular fa-folder-open"></i> View Projects</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><div class="stat-num" data-count="6">0</div><div class="stat-label">Projects</div></div>
+            <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">Certifications</div></div>
+            <div class="stat"><div class="stat-num" data-count="8">0</div><div class="stat-label">CGPA / 10</div></div>
+          </div>
+        </div>
+        <!-- PROFILE CARD -->
+        <div class="hero-visual">
+          <div class="profile-card-wrap">
+            <div class="profile-card">
+              <div class="shimmer"></div>
+              <div class="pc-status"><span class="pc-status-dot"></span>Available</div>
+              <div class="pc-avatar"><img src="/src/profile.jpg" alt="Sanish Bhagat" class="pc-avatar-img" referrerPolicy="no-referrer"></div>
+              <div class="pc-name">Sanish Bhagat</div>
+              <div class="pc-role">AI / ML Engineer</div>
+              <div class="pc-divider"></div>
+              <div class="pc-stat-row">
+                <div class="pc-stat"><div class="pc-stat-n">6</div><div class="pc-stat-l">Projects</div></div>
+                <div class="pc-stat"><div class="pc-stat-n">8.82</div><div class="pc-stat-l">CGPA</div></div>
+                <div class="pc-stat"><div class="pc-stat-n">5</div><div class="pc-stat-l">Certs</div></div>
+              </div>
+              <div class="pc-info-row"><i class="fa-solid fa-location-dot pc-info-icon"></i><span class="pc-info-text">Kalyani, West Bengal, India</span></div>
+              <div class="pc-info-row"><i class="fa-solid fa-graduation-cap pc-info-icon"></i><span class="pc-info-text">B.Tech CSE — JIS College (2027)</span></div>
+              <div class="pc-info-row"><i class="fa-solid fa-envelope pc-info-icon"></i><a href="mailto:sanishbhagat3@gmail.com" class="pc-info-link">sanishbhagat3@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-sidebar reveal">
+            <div class="about-card">
+              <div class="about-card-avatar"><i class="fa-solid fa-language"></i></div>
+              <div class="about-card-name">Languages</div>
+              <div class="about-card-role">Communication Skills</div>
+              <div class="about-card-div"></div>
+              <div class="acd"><div class="acd-icon"><i class="fa-solid fa-earth-americas"></i></div><div><div class="acd-label">English</div><div class="acd-val">Read, Write, Speak (Proficient)</div></div></div>
+              <div class="acd"><div class="acd-icon"><i class="fa-solid fa-om"></i></div><div><div class="acd-label">Hindi</div><div class="acd-val">Read, Write, Speak (Proficient)</div></div></div>
+              <div class="acd"><div class="acd-icon"><i class="fa-solid fa-bullhorn"></i></div><div><div class="acd-label">Bengali</div><div class="acd-val">Speak (Conversational)</div></div></div>
+            </div>
+            <div class="about-cta reveal reveal-delay-2">
+              <a href="/Sanish_Bhagat_CV.pdf" class="btn btn-primary" download><i class="fa-solid fa-download"></i> Download CV</a>
+              <a href="#projects" class="btn btn-outline">See My Work</a>
+            </div>
+          </div>
+          <div class="about-info">
+            <div class="section-label reveal">About Me</div>
+            <h2 class="section-title reveal reveal-delay-1">Turning AI Research<br/>Into Real Products</h2>
+            <p class="about-text reveal reveal-delay-2">I'm Sanish — an <strong>AI/ML Engineer</strong> passionate about building intelligent systems that create real-world impact. I specialize in <strong>Generative AI</strong>, multimodal models, and RAG-based LLM pipelines, with a strong focus on healthcare and agriculture domains.</p>
+            <p class="about-text reveal reveal-delay-2">From building an AI health assistant powered by <strong>Google Gemini</strong> to training CNN models for plant disease detection, I bridge the gap between cutting-edge research and <strong>production-ready applications</strong>. Strong foundation in DSA (C++), Machine Learning, and Deep Learning.</p>
+            <div class="about-highlights reveal reveal-delay-3">
+              <div class="highlight-item"><i class="fa-solid fa-brain hi-icon"></i><div class="hi-text"><strong>DSA</strong><span>Data Structures, DSA(C++), Algorithms</span></div></div>
+              <div class="highlight-item"><i class="fa-solid fa-brain hi-icon"></i><div class="hi-text"><strong>Gen-AI</strong><span>LLMs, RAG, multimodal AI</span></div></div>
+              <div class="highlight-item"><i class="fa-solid fa-microchip hi-icon"></i><div class="hi-text"><strong>Deep Learning</strong><span>TensorFlow, Keras, CNNs</span></div></div>
+              <div class="highlight-item"><i class="fa-solid fa-layer-group hi-icon"></i><div class="hi-text"><strong>Full-Stack AI</strong><span>Flask, FastAPI, React</span></div></div>
+              <div class="highlight-item"><i class="fa-solid fa-trophy hi-icon"></i><div class="hi-text"><strong>Rapid Prototyper</strong><span>Hackathons &amp; AI competitions</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-inner">
+        <div class="section-label reveal">/ SKILLS</div>
+        <h2 class="section-title reveal reveal-delay-1">Tech Stack</h2>
+        <div class="skills-grid">
+          <!-- Programming Languages -->
+          <div class="skill-card reveal">
+            <div class="sc-head">
+              <div class="sc-icon icon-languages"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="sc-title">Languages</div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">Python</span>
+              <span class="tag tag-accent">C / C++</span>
+              <span class="tag tag-accent">Java</span>
+              <span class="tag tag-accent">SQL</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- AI / ML -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="sc-head">
+              <div class="sc-icon icon-ai"><i class="fa-solid fa-brain"></i></div>
+              <div class="sc-title">AI / ML</div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">Gen-AI</span>
+              <span class="tag tag-accent">Machine Learning</span>
+              <span class="tag tag-accent">Deep Learning</span>
+              <span class="tag tag-accent">Keras</span>
+              <span class="tag tag-accent">CNN</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Multimodal AI</span>
+              <span class="tag">RAG</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Agentic AI</span>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="sc-head">
+              <div class="sc-icon icon-frameworks"><i class="fa-solid fa-gear"></i></div>
+              <div class="sc-title">Frameworks & Libraries</div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">React</span>
+              <span class="tag tag-accent">Flask</span>
+              <span class="tag tag-accent">FastAPI</span>
+              <span class="tag tag-accent">Streamlit</span>
+              <span class="tag tag-accent">LangChain</span>
+              <span class="tag">Langraph</span>
+              <span class="tag">Numpy</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Seaborn</span>
+              <span class="tag">Tensorflow</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Databases & Storage -->
+          <div class="skill-card reveal reveal-delay-3">
+            <div class="sc-head">
+              <div class="sc-icon icon-tools" style="color: #00f2fe; background: rgba(0,242,254,0.1); border-color: rgba(0,242,254,0.2);"><i class="fa-solid fa-database"></i></div>
+              <div class="sc-title">Databases & Storage</div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">FAISS</span>
+              <span class="tag tag-accent">Pinecone</span>
+              <span class="tag tag-accent">VectorDB</span>
+              <span class="tag">Firestore</span>
+              <span class="tag">AlaSQL</span>
+              <span class="tag">IndexedDB</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-card reveal reveal-delay-4">
+            <div class="sc-head">
+              <div class="sc-icon icon-tools"><i class="fa-solid fa-wrench"></i></div>
+              <div class="sc-title">Tools</div>
+            </div>
+            <div class="tech-tags">
+              <span class="tag tag-accent">Git</span>
+              <span class="tag tag-accent">Docker</span>
+              <span class="tag tag-accent">Vercel</span>
+              <span class="tag">HuggingFace Spaces</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Google Colab</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-inner">
+        <div class="projects-header">
+          <div>
+            <div class="section-label reveal">Portfolio</div>
+            <h2 class="section-title reveal reveal-delay-1">Featured Projects</h2>
+          </div>
+          <div class="filter-tabs reveal reveal-delay-2">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare AI</button>
+            <button class="filter-btn" data-filter="ai">AI Agents / RAG</button>
+            <button class="filter-btn" data-filter="vision">Computer Vision</button>
+          </div>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- EDUCATION TIMELINE -->
+    <section id="experience">
+      <div class="section-inner">
+        <div class="section-label reveal">Background</div>
+        <h2 class="section-title reveal reveal-delay-1">Education &amp; Journey</h2>
+        <p class="section-sub reveal reveal-delay-2">A strong academic foundation combined with hands-on AI development and competitive programming.</p>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">2023 — 2027 (Ongoing)</div>
+            <div class="timeline-role">B.Tech in Computer Science &amp; Engineering</div>
+            <div class="timeline-org">@ <span>JIS College of Engineering</span> · Kalyani, West Bengal</div>
+            <div class="timeline-body">
+              <p class="timeline-desc">Pursuing CSE with a focus on AI/ML electives, data structures, and algorithms. Maintaining a CGPA of 8.82 across the first two years. Actively building AI projects, participating in hackathons, and attending workshops alongside coursework.</p>
+              <div class="timeline-tags"><span class="tag">CGPA: 8.82</span><span class="tag">AI/ML Focus</span><span class="tag">DSA (C++)</span><span class="tag">Full-Stack AI</span></div>
+            </div>
+          </div>
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">2023 — Present</div>
+            <div class="timeline-role">Independent AI/ML Engineer</div>
+            <div class="timeline-org">@ <span>Self-directed Projects</span> · Remote</div>
+            <div class="timeline-body">
+              <p class="timeline-desc">Built multiple production-ready AI applications from scratch — a multimodal healthcare assistant (Health Sathi), an AI dermatology tool (Derma AI), and a plant disease detector (AgroGuard). Recognized for rapid prototyping, teamwork, and problem-solving in healthcare AI hackathons and competitions.</p>
+              <div class="timeline-tags"><span class="tag">Gen-AI</span><span class="tag">RAG Pipelines</span><span class="tag">Hackathons</span><span class="tag">Open Source</span></div>
+            </div>
+          </div>
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-period">Completed 2023</div>
+            <div class="timeline-role">Higher Secondary Education (Class XII)</div>
+            <div class="timeline-org">@ <span>Sahanganj Dunlop Hindi High School</span></div>
+            <div class="timeline-body">
+              <p class="timeline-desc">Completed higher secondary with 78.8%. Developed a strong interest in mathematics and programming, which led to pursuing Computer Science Engineering.</p>
+              <div class="timeline-tags"><span class="tag">Percentage: 78.8%</span><span class="tag">Science Stream</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications">
+      <div class="section-inner">
+        <div class="section-label reveal">Credentials</div>
+        <h2 class="section-title reveal reveal-delay-1">Certifications</h2>
+        <p class="section-sub reveal reveal-delay-2">Industry-recognized certifications validating expertise in AI, cloud computing, and programming.</p>
+        <div class="cert-grid" id="cert-grid"></div>
+      </div>
+    </section>
+
+  
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-inner">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="section-label reveal">Get In Touch</div>
+            <h2 class="section-title reveal reveal-delay-1">Let's Build<br/>Something<br/><span style="color:var(--accent)">Intelligent</span></h2>
+            <p class="contact-text reveal reveal-delay-2">Have an AI project idea or want to collaborate? I'm always open to exciting opportunities.</p>
+            <div class="contact-items reveal reveal-delay-3">
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-envelope"></i></div><div><div class="ci-label">Email</div><a href="mailto:sanishbhagat3@gmail.com" class="ci-val">sanishbhagat3@gmail.com</a></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-phone"></i></div><div><div class="ci-label">Phone</div><a href="tel:+918697191230" class="ci-val">+91-8697191230</a></div></div>
+              <div class="contact-item"><div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div><div><div class="ci-label">Location</div><div class="ci-val">Kalyani, West Bengal, India</div></div></div>
+            </div>
+            <div class="social-links reveal reveal-delay-4">
+              <a href="https://linkedin.com/in/sanishbhagat" target="_blank" class="social-link" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://github.com/sanishbhagat" target="_blank" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.geeksforgeeks.org/profile/sanishbnwa3" target="_blank" class="social-link" title="GeeksforGeeks"><i class="fa-solid fa-code"></i></a>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group"><label class="form-label" for="fname">First Name</label><input type="text" id="fname" class="form-input" placeholder="John"/><div class="form-error" id="fname-error">Enter your first name.</div></div>
+                <div class="form-group"><label class="form-label" for="lname">Last Name</label><input type="text" id="lname" class="form-input" placeholder="Doe"/><div class="form-error" id="lname-error">Enter your last name.</div></div>
+              </div>
+              <div class="form-group"><label class="form-label" for="email">Email</label><input type="email" id="email" class="form-input" placeholder="you@example.com"/><div class="form-error" id="email-error">Enter a valid email.</div></div>
+              <div class="form-group"><label class="form-label" for="subject">Subject</label><input type="text" id="subject" class="form-input" placeholder="AI Project Collaboration"/><div class="form-error" id="subject-error">Enter a subject.</div></div>
+              <div class="form-group"><label class="form-label" for="message">Message</label><textarea id="message" class="form-textarea" placeholder="Tell me about your idea..."></textarea><div class="form-error" id="message-error">Message must be at least 20 characters.</div></div>
+              <button type="submit" class="btn-submit" id="submitBtn"><span id="btn-text"><i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message</span></button>
+              <div class="form-success-msg" id="successMsg"><i class="fa-solid fa-circle-check"></i> Message sent! I'll reply within 24 hours.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">Sanish.</div>
+        <div class="footer-copy">© <span id="year"></span> Sanish Bhagat — Built with <i class="fa-solid fa-heart" style="color: var(--accent);"></i> &amp; Python instincts.</div>
+        <div class="footer-links">
+          <a href="#about">About</a><a href="#projects">Projects</a>
+          <a href="#certifications">Certs</a><a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+    <button id="back-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
+
